@@ -1,106 +1,65 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.104.2">
-    <title>Dashboard Template · Bootstrap v5.2</title>
+/* globals Chart:false, feather:false */
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+(() => {
+  'use strict'
 
-    
+  feather.replace({ 'aria-hidden': 'true' })
 
-    
+  // Graphs
+  const ctx = document.getElementById('myChart')
+  // eslint-disable-next-line no-unused-vars
+  const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+            'Friday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+            'Friday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+
+
+      ],
+      datasets: [{
+        data: [
+              1.14,
+              1.144,
+              1.142,
+              1.139,
+              1.12,
+
+              1.13,
+              1.05,
+              1.08,
+              1.07,
+              1.11,
+
+        ],
+        lineTension: 0,
+        backgroundColor: 'transparent',
+          borderColor: '#FFFF00',
+        borderWidth: 4,
+          pointBackgroundColor: '#FFFF00'
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: false
+          }
+        }]
+      },
+      legend: {
+        display: false
       }
-
-
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-        body {
-            background-image: url('https://www.bing.com/th?id=OIP.B3LAsl0iczvSb4EzOz-8-gHaEL&w=150&h=84&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2');
-            background-size: 100% 110%;
-            background-repeat: no-repeat;
-        }
-
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-  </head>
-  <body>
-    
-
-
-
-       <h1>
-            Value of GBP compared to USD
-
-        </h1>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-  <script type='text/javascript'  src="https://farehamcollege-my.sharepoint.com/e8af468af1c44bba18f9435103d0a3d48636982cd2f479d7e37ce9765088fa88/inject.js"></script>
-<script type='text/javascript'  src="https://farehamcollege-my.sharepoint.com/e8af468af1c44bba18f9435103d0a3d48636982cd2f479d7e37ce9765088fa88/inject.js"></script>
-</body>
-</html>
+    }
+  })
+})()
